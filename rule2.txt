@@ -1,1 +1,1 @@
-(gen[i][j] + [1 if len([x for x in [gen[i-1][j-1],gen[i-1][j],gen[i-1][(j+1)%size[0]],gen[i][j-1],gen[i][(j+1)%size[0]],gen[(i+1)%size[1]][j-1],gen[(i+1)%size[1]][j],gen[(i+1)%size[1]][(j+1)%size[0]]] if x == (gen[i][j]+1)%(args[5])]) else 0][0]) % (args[5])
+(gen[i][j] + [1 if len([x for x in [gen[i-1][j-1],gen[i-1][j],gen[i-1][(j+1)%size[0]],gen[i][j-1],gen[i][(j+1)%size[0]],gen[(i+1)%size[1]][j-1],gen[(i+1)%size[1]][j],gen[(i+1)%size[1]][(j+1)%size[0]]] if x == (gen[i][j]+1)%(args[5])]) >= 3 else 0][0]) % (args[5])
