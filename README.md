@@ -14,8 +14,10 @@ Pour l'écriture de vos règles :
 * La génération précédente est la liste "gen".
 * La cellule sur laquelle est appliquée la règle est en coordonnée [i] ou [i][j] si vous utilisez 2 dimensions.
 * Notez que par simplicité technique l'espace utilisé n'est pas Z^d mais un tore dont vous définissez les dimensions dans les arguments. Pour un automate à une dimension, si vous utilisez la valeur d'une cellule avec une coordonnée superieur à i veuillez noter [(i+x)%size[0]]. Pour un automate à deux dimensions, si vous utilisez la valeur d'une cellule avec des coordonnées superieur à i ou j, veuillez noter [(i+x)%size[1]] et/ou [(j+y)%size[0]].
+* Les états des cellules vont de 0 à (args[5]-1).
 
 Quelques exemples de règles :
 * Le jeu de la vie, 2D : (gen[i][j] and (gen[i-1][j-1]+gen[i-1][j]+gen[i-1][(j+1)%size[0]]+gen[i][j-1]+gen[i][(j+1)%size[0]]+gen[(i+1)%size[1]][j-1]+gen[(i+1)%size[1]][j]+gen[(i+1)%size[1]][(j+1)%size[0]] in [2,3])) or (not(gen[i][j]) and (gen[i-1][j-1]+gen[i-1][j]+gen[i-1][(j+1)%size[0]]+gen[i][j-1]+gen[i][(j+1)%size[0]]+gen[(i+1)%size[1]][j-1]+gen[(i+1)%size[1]][j]+gen[(i+1)%size[1]][(j+1)%size[0]] == 3))
 * Règle élémentaire 110, 1D : (gen[(i+1)%size[0]] and (not(gen[i-1]) or not(gen[i]))) or (gen[i] and not(gen[(i+1)%size[0]]))
 * Règle élémentaire 30, 1D : gen[i-1]^(gen[i]|gen[(i+1)%size[0]])
+* Automate cyclique de D. Griffeath, 2D : (gen[i][j] + [1 if len([x for x in [gen[i-1][j-1],gen[i-1][j],gen[i-1][(j+1)%size[0]],gen[i][j-1],gen[i][(j+1)%size[0]],gen[(i+1)%size[1]][j-1],gen[(i+1)%size[1]][j],gen[(i+1)%size[1]][(j+1)%size[1]]] if x == (gen[i][j]+1)%(args[5])]) else 0][0]) % (args[5])
