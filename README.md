@@ -1,4 +1,4 @@
-#Visualiseur d'Automates Cellulaires par Mattéo LUQUE
+# Visualiseur d'Automates Cellulaires par Mattéo LUQUE
 
 Ce programme vous permet de visualiser l'automate cellulaire de votre choix. Pour cela, si vous souhaitez visualiser un automate en une dimension, donnez la règle de cet automate dans le fichier "rule.txt". Si il est en deux dimensions, donnez la règle dans "rule2.txt".
 
