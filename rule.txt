@@ -1,0 +1,1 @@
+(gen[(i+1)%size[0]] and (not(gen[i-1]) or not(gen[i]))) or (gen[i] and not(gen[(i+1)%size[0]]))
